@@ -1,0 +1,60 @@
+"""FastAPI application entrypoint."""
+
+import logging
+
+from fastapi import FastAPI, Request, status
+from fastapi.responses import JSONResponse
+
+from app.api.v1.endpoints import health
+from app.api.v1.router import api_router
+from app.core.config import settings
+from app.utils.exceptions import register_exception_handlers
+from app.utils.rate_limit import SimpleRateLimiter
+
+
+def create_app() -> FastAPI:
+    """Create and configure the FastAPI application."""
+
+    logging.basicConfig(level=settings.log_level)
+
+    app = FastAPI(
+        title=settings.app_name,
+        version=settings.app_version,
+        debug=settings.debug,
+        docs_url="/docs",
+        redoc_url="/redoc",
+    )
+
+    limiter = SimpleRateLimiter(
+        max_requests=settings.rate_limit_requests,
+        window_seconds=settings.rate_limit_window_seconds,
+    )
+
+    @app.middleware("http")
+    async def rate_limit_middleware(request: Request, call_next):  # type: ignore[no-untyped-def]
+        if request.url.path.startswith("/api/"):
+            client_host = request.client.host if request.client else "unknown"
+            if not limiter.allow(client_host):
+                return JSONResponse(
+                    status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+                    content={
+                        "error": {
+                            "code": "rate_limited",
+                            "message": "Too many requests",
+                        }
+                    },
+                )
+        return await call_next(request)
+
+    register_exception_handlers(app)
+    app.include_router(api_router, prefix=settings.api_v1_prefix)
+    app.include_router(health.router, prefix="/api")
+
+    @app.get("/")
+    async def root() -> dict[str, str]:
+        return {"message": settings.app_name, "docs": "/docs"}
+
+    return app
+
+
+app = create_app()
