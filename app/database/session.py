@@ -1,11 +1,11 @@
-"""Database engine and session factory."""
+﻿"""Database engine and session factory."""
 
 from collections.abc import Generator
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
-from app.core.config import settings
+from app.config import settings
 
 
 def _connect_args(database_url: str) -> dict[str, bool]:

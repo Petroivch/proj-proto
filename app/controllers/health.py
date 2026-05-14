@@ -1,9 +1,9 @@
-"""Health endpoint."""
+﻿"""Health endpoint."""
 
 from fastapi import APIRouter
 
-from app.core.config import settings
-from app.schemas.health import HealthRead
+from app.config import settings
+from app.dto.health import HealthRead
 
 router = APIRouter(tags=["health"])
 

@@ -1,4 +1,4 @@
-"""Application exceptions and FastAPI handlers."""
+﻿"""Application exceptions and FastAPI handlers."""
 
 from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse

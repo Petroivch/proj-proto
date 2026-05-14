@@ -1,13 +1,13 @@
-"""FastAPI application entrypoint."""
+﻿"""FastAPI application entrypoint."""
 
 import logging
 
 from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 
-from app.api.v1.endpoints import health
-from app.api.v1.router import api_router
-from app.core.config import settings
+from app.config import settings
+from app.controllers import health
+from app.controllers.router import api_router
 from app.utils.exceptions import register_exception_handlers
 from app.utils.rate_limit import SimpleRateLimiter
 

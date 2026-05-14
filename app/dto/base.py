@@ -1,4 +1,4 @@
-"""Shared Pydantic schema configuration."""
+﻿"""Shared Pydantic schema configuration."""
 
 from pydantic import BaseModel, ConfigDict
 

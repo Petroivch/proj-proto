@@ -1,7 +1,7 @@
 # Project Radar API
 
-Небольшой backend-сервис для управления пользователями, проектами, задачами и
-тегами. Проект сделан на FastAPI, использует PostgreSQL, SQLAlchemy, Alembic,
+Backend-сервис для управления пользователями, проектами, задачами и тегами.
+Проект написан на FastAPI, использует PostgreSQL, SQLAlchemy, Alembic,
 Pydantic и запускается через Docker Compose.
 
 ## Что умеет сервис
@@ -69,7 +69,7 @@ python -m flake8 app tests --max-line-length=100
 python -m mypy app --ignore-missing-imports
 ```
 
-На момент подготовки проекта тесты проходят, покрытие кода выше 90%.
+Тесты покрывают API, сервисы, DTO и работу с базой. Покрытие кода выше 90%.
 
 ## Основные эндпоинты
 
@@ -87,21 +87,27 @@ python -m mypy app --ignore-missing-imports
 
 ```text
 app/
-  api/          маршруты FastAPI
-  core/         настройки и базовая безопасность
-  crud/         работа с базой данных
-  database/     модели и подключение к базе
-  schemas/      Pydantic-схемы
-  services/     бизнес-логика
-  text_analysis/ анализ текста задач
-  utils/        ошибки, валидаторы, rate limit
+  controllers/     HTTP-эндпоинты
+  dto/             Pydantic DTO для запросов и ответов
+  repositories/    работа с базой данных
+  services/        бизнес-логика
+  database/        подключение к базе и общий Base
+  models.py        SQLAlchemy-модели
+  config.py        настройки приложения
+  security.py      хеширование паролей
+  text_analysis/   анализ текста задачи
+  utils/           ошибки, валидаторы, rate limit
 tests/
-  unit/         модульные тесты
-  integration/  интеграционные тесты API и базы
+  unit/            тесты DTO и сервисов
+  integration/     тесты API и базы данных
 alembic/
-  versions/     миграции базы данных
+  versions/        миграции базы данных
 ```
 
-Проект специально разделен на слои, чтобы код было легко читать и проверять:
-эндпоинты принимают запросы, сервисы выполняют бизнес-логику, CRUD-слой работает
-с базой данных, а схемы отвечают за валидацию.
+Логика разделена по слоям:
+
+- `controllers` принимают HTTP-запросы;
+- `dto` описывают входные и выходные данные;
+- `services` выполняют бизнес-логику;
+- `repositories` работают с таблицами;
+- `models.py` хранит структуру базы данных.

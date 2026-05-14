@@ -1,11 +1,11 @@
-"""Project business logic."""
+﻿"""Project business logic."""
 
 from sqlalchemy.orm import Session
 
-from app.crud.project import project_crud
-from app.crud.user import user_crud
-from app.database.models import Project
-from app.schemas.project import ProjectCreate, ProjectUpdate
+from app.repositories.project import project_crud
+from app.repositories.user import user_crud
+from app.models import Project
+from app.dto.project import ProjectCreate, ProjectUpdate
 from app.utils.exceptions import ConflictError, NotFoundError
 
 

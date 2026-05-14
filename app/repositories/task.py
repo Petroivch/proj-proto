@@ -1,11 +1,11 @@
-"""Task and tag CRUD operations."""
+﻿"""Task and tag CRUD operations."""
 
 from __future__ import annotations
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session, selectinload
 
-from app.database.models import Tag, Task
+from app.models import Tag, Task
 
 
 class TaskCRUD:

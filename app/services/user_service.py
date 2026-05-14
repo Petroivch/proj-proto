@@ -1,11 +1,11 @@
-"""User business logic."""
+﻿"""User business logic."""
 
 from sqlalchemy.orm import Session
 
-from app.core.security import hash_password
-from app.crud.user import user_crud
-from app.database.models import User
-from app.schemas.user import UserCreate, UserUpdate
+from app.security import hash_password
+from app.repositories.user import user_crud
+from app.models import User
+from app.dto.user import UserCreate, UserUpdate
 from app.utils.exceptions import ConflictError, NotFoundError
 
 

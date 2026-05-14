@@ -1,4 +1,4 @@
-"""Pytest fixtures."""
+﻿"""Pytest fixtures."""
 
 from collections.abc import Generator
 
@@ -8,8 +8,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy.pool import StaticPool
 
-from app.api.v1.dependencies import get_db
-from app.database import models  # noqa: F401
+from app.controllers.dependencies import get_db
+from app import models  # noqa: F401
 from app.database.base import Base
 from app.main import app
 

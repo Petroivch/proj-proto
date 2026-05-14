@@ -1,8 +1,8 @@
-"""API v1 router composition."""
+﻿"""API v1 router composition."""
 
 from fastapi import APIRouter
 
-from app.api.v1.endpoints import analysis, health, projects, tasks, users
+from app.controllers import analysis, health, projects, tasks, users
 
 api_router = APIRouter()
 api_router.include_router(health.router)

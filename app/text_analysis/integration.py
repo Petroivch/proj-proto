@@ -1,4 +1,4 @@
-"""Deterministic text analysis used by the API."""
+﻿"""Deterministic text analysis used by the API."""
 
 import re
 from collections import Counter

@@ -1,6 +1,6 @@
-"""Health-check schemas."""
+﻿"""Health-check schemas."""
 
-from app.schemas.base import ORMBaseModel
+from app.dto.base import ORMBaseModel
 
 
 class HealthRead(ORMBaseModel):

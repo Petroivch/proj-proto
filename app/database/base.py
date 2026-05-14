@@ -1,4 +1,4 @@
-"""SQLAlchemy declarative base and shared model columns."""
+﻿"""SQLAlchemy declarative base and shared model columns."""
 
 from datetime import datetime
 

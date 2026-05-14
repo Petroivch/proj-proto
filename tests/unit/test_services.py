@@ -1,12 +1,12 @@
-"""Service and utility tests."""
+﻿"""Service and utility tests."""
 
 import pytest
 
 from app.text_analysis.integration import TextAnalyzer
-from app.core.security import hash_password, verify_password
-from app.schemas.project import ProjectCreate, ProjectUpdate
-from app.schemas.task import TaskCreate, TaskUpdate
-from app.schemas.user import UserCreate, UserUpdate
+from app.security import hash_password, verify_password
+from app.dto.project import ProjectCreate, ProjectUpdate
+from app.dto.task import TaskCreate, TaskUpdate
+from app.dto.user import UserCreate, UserUpdate
 from app.services.analysis_service import TextAnalysisService
 from app.services.project_service import ProjectService
 from app.services.task_service import TaskService

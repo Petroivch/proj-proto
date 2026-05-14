@@ -1,8 +1,8 @@
-"""Text analysis endpoints."""
+﻿"""Text analysis endpoints."""
 
 from fastapi import APIRouter
 
-from app.schemas.analysis import TextAnalysisRead, TextAnalysisRequest
+from app.dto.analysis import TextAnalysisRead, TextAnalysisRequest
 from app.services.analysis_service import TextAnalysisService
 
 router = APIRouter()

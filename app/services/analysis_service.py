@@ -1,6 +1,6 @@
-"""Text analysis service facade."""
+﻿"""Text analysis service facade."""
 
-from app.schemas.analysis import TextAnalysisRead
+from app.dto.analysis import TextAnalysisRead
 from app.text_analysis.integration import TextAnalyzer
 
 

@@ -1,11 +1,11 @@
-"""Project request and response schemas."""
+﻿"""Project request and response schemas."""
 
 from datetime import datetime
 from typing import Literal
 
 from pydantic import Field, field_validator
 
-from app.schemas.base import ORMBaseModel
+from app.dto.base import ORMBaseModel
 
 
 ProjectStatus = Literal["planned", "active", "completed", "archived"]

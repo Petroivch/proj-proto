@@ -1,9 +1,9 @@
-"""Project CRUD operations."""
+﻿"""Project CRUD operations."""
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.database.models import Project
+from app.models import Project
 
 
 class ProjectCRUD:

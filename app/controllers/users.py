@@ -1,13 +1,13 @@
-"""User endpoints."""
+﻿"""User endpoints."""
 
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query, Response, status
 from sqlalchemy.orm import Session
 
-from app.api.v1.dependencies import get_db
-from app.database.models import User
-from app.schemas.user import UserCreate, UserRead, UserUpdate
+from app.controllers.dependencies import get_db
+from app.models import User
+from app.dto.user import UserCreate, UserRead, UserUpdate
 from app.services.user_service import UserService
 
 router = APIRouter()

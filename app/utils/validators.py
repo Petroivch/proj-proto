@@ -1,4 +1,4 @@
-"""Shared validation helpers."""
+﻿"""Shared validation helpers."""
 
 import re
 

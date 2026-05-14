@@ -1,13 +1,13 @@
-"""Project endpoints."""
+﻿"""Project endpoints."""
 
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query, Response, status
 from sqlalchemy.orm import Session
 
-from app.api.v1.dependencies import get_db
-from app.database.models import Project
-from app.schemas.project import ProjectCreate, ProjectRead, ProjectUpdate
+from app.controllers.dependencies import get_db
+from app.models import Project
+from app.dto.project import ProjectCreate, ProjectRead, ProjectUpdate
 from app.services.project_service import ProjectService
 
 router = APIRouter()

@@ -1,10 +1,10 @@
-"""Text analysis schemas."""
+﻿"""Text analysis schemas."""
 
 from typing import Literal
 
 from pydantic import Field
 
-from app.schemas.base import ORMBaseModel
+from app.dto.base import ORMBaseModel
 
 
 class TextAnalysisRequest(ORMBaseModel):

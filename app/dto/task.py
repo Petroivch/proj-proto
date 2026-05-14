@@ -1,11 +1,11 @@
-"""Task and tag request/response schemas."""
+﻿"""Task and tag request/response schemas."""
 
 from datetime import date, datetime
 from typing import Literal
 
 from pydantic import Field, field_validator
 
-from app.schemas.base import ORMBaseModel
+from app.dto.base import ORMBaseModel
 from app.utils.exceptions import BadRequestError
 from app.utils.validators import normalize_tag_name
 

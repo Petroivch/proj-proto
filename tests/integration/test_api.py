@@ -1,4 +1,4 @@
-"""API integration tests."""
+﻿"""API integration tests."""
 
 
 def create_user(client, email: str = "owner@example.com", username: str = "owner") -> int:

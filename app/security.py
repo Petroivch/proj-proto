@@ -1,4 +1,4 @@
-"""Password hashing utilities."""
+﻿"""Password hashing utilities."""
 
 import base64
 import hashlib

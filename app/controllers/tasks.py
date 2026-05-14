@@ -1,14 +1,14 @@
-"""Task endpoints."""
+﻿"""Task endpoints."""
 
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query, Response, status
 from sqlalchemy.orm import Session
 
-from app.api.v1.dependencies import get_db
-from app.database.models import Task
-from app.schemas.analysis import TextAnalysisRead
-from app.schemas.task import TaskCreate, TaskRead, TaskStatus, TaskUpdate
+from app.controllers.dependencies import get_db
+from app.models import Task
+from app.dto.analysis import TextAnalysisRead
+from app.dto.task import TaskCreate, TaskRead, TaskStatus, TaskUpdate
 from app.services.task_service import TaskService
 
 router = APIRouter()

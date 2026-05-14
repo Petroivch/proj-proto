@@ -1,4 +1,4 @@
-"""SQLAlchemy models for users, projects, tasks, and tags."""
+﻿"""SQLAlchemy models for users, projects, tasks, and tags."""
 
 from datetime import date
 

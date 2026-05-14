@@ -1,13 +1,13 @@
-"""Task business logic."""
+﻿"""Task business logic."""
 
 from sqlalchemy.orm import Session
 
-from app.crud.project import project_crud
-from app.crud.task import task_crud
-from app.crud.user import user_crud
-from app.database.models import Task
-from app.schemas.analysis import TextAnalysisRead
-from app.schemas.task import TaskCreate, TaskUpdate
+from app.repositories.project import project_crud
+from app.repositories.task import task_crud
+from app.repositories.user import user_crud
+from app.models import Task
+from app.dto.analysis import TextAnalysisRead
+from app.dto.task import TaskCreate, TaskUpdate
 from app.services.analysis_service import TextAnalysisService
 from app.utils.exceptions import NotFoundError
 

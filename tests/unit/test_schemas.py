@@ -1,12 +1,12 @@
-"""Schema validation tests."""
+﻿"""Schema validation tests."""
 
 import pytest
 from pydantic import ValidationError
 
-from app.schemas.analysis import TextAnalysisRequest
-from app.schemas.project import ProjectCreate
-from app.schemas.task import TaskCreate, TaskUpdate
-from app.schemas.user import UserCreate, UserUpdate
+from app.dto.analysis import TextAnalysisRequest
+from app.dto.project import ProjectCreate
+from app.dto.task import TaskCreate, TaskUpdate
+from app.dto.user import UserCreate, UserUpdate
 
 
 def test_user_create_normalizes_username() -> None:

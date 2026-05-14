@@ -1,4 +1,4 @@
-"""Small in-memory fixed-window rate limiter."""
+﻿"""Small in-memory fixed-window rate limiter."""
 
 from collections import defaultdict, deque
 from collections.abc import MutableMapping

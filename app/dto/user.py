@@ -1,10 +1,10 @@
-"""User request and response schemas."""
+﻿"""User request and response schemas."""
 
 from datetime import datetime
 
 from pydantic import EmailStr, Field, field_validator
 
-from app.schemas.base import ORMBaseModel
+from app.dto.base import ORMBaseModel
 
 
 class UserBase(ORMBaseModel):

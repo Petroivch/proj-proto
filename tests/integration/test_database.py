@@ -1,11 +1,11 @@
-"""Database integration tests."""
+﻿"""Database integration tests."""
 
 from sqlalchemy import select
 
-from app.database.models import Project, Tag, Task, User
-from app.schemas.project import ProjectCreate
-from app.schemas.task import TaskCreate
-from app.schemas.user import UserCreate
+from app.models import Project, Tag, Task, User
+from app.dto.project import ProjectCreate
+from app.dto.task import TaskCreate
+from app.dto.user import UserCreate
 from app.services.project_service import ProjectService
 from app.services.task_service import TaskService
 from app.services.user_service import UserService

@@ -1,1 +1,1 @@
-"""Text analysis package."""
+﻿"""Text analysis package."""
